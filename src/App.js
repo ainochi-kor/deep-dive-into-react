@@ -7,6 +7,7 @@ import Product from './page/product';
 import ShoppingList from './page/shop';
 import RespondingToEvent from './page/responding';
 import State from './page/state';
+import Game from './page/game';
 
 const showQuickStart = () => {
   if (window.location.pathname === "/") {
@@ -50,6 +51,12 @@ const showState = () => {
   }
 }
 
+const showGame = () => {
+  if (window.location.pathname === "/game") {
+    return <Game />
+  }
+}
+
 function App() {
   return (
     <div className="App">
@@ -60,6 +67,7 @@ function App() {
       {showShop()}
       {showResponse()}
       {showState()}
+      {showGame()}
     </div>
   );
 }
