@@ -1,5 +1,6 @@
-import { ActivityComponentType } from "@stackflow/react";
+import { ActivityComponentType, useActivity } from "@stackflow/react";
 import { AppScreen } from "@stackflow/plugin-basic-ui";
+import { useFlow } from "./stackflow";
 
 type ArticleParams = {
   title: string;
@@ -7,10 +8,20 @@ type ArticleParams = {
 const Article: ActivityComponentType<ArticleParams> = ({
   params: { title },
 }) => {
+  const { pop } = useFlow();
+  const activity = useActivity()
+
+  console.log(activity);
+
+  const onClick = () => {
+    pop();
+  };
+
   return (
     <AppScreen appBar={{ title: "Article" }}>
       <div>
         <h1>{title}</h1>
+        <button onClick={onClick}>back</button>
       </div>
     </AppScreen>
   );

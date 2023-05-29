@@ -16,6 +16,12 @@ export const { Stack, useFlow } = stackflow({
     basicUIPlugin({
       theme: "cupertino",
     }),
+    ()=> ({
+      key: "activityLog",
+      onPushed({effect}){
+        console.log(effect.activity.name)
+      }
+    })
   ],
   initialActivity: () => "MyActivity",
 });

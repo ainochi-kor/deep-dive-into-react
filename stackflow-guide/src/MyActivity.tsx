@@ -3,11 +3,11 @@ import { AppScreen } from "@stackflow/plugin-basic-ui";
 import { useFlow } from "./stackflow";
 
 const MyActivity: ActivityComponentType = () => {
-  const { replace } = useFlow();
+  const { push } = useFlow();
 
   const onClick = () => {
     console.log("Click");
-    replace("Article", {
+    push("Article", {
       title: "Hello",
     });
   };
