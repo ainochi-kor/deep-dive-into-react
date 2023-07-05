@@ -1,0 +1,1 @@
+[[에러 일지] Next.js - Parsing error: Cannot find module 'next/babel'](https://velog.io/@nemo/nextjs-parsing-error)
